@@ -16,7 +16,7 @@ export default function () {
   const dispatch = useDispatch();
   const favorites = useSelector((state) => state.Favorites.Favorites);
   const [modalVisible, setModalVisible] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [selectedItem, setSelectedItem] = useState('');
 
   const handleDeleteItem = (item) => {
     setSelectedItem(item);
@@ -33,6 +33,7 @@ export default function () {
   };
 
   const handleDeleteCancel = () => {
+    setSelectedItem(''); // Modal kapandığında selectedItem'ı sıfırla
     setModalVisible(false);
   };
 
@@ -64,8 +65,11 @@ export default function () {
       <Modal isVisible={modalVisible}>
         <View style={styles.modalContainer}>
           <Text style={styles.modalText}>
-            {selectedItem.name } Karakterini Silmek istediğinizden emin misiniz?
+            {selectedItem.name
+              ? `${selectedItem.name} Karakterini Silmek istediğinizden emin misiniz?`
+              : "Karakterini Silmek istediğinizden emin misiniz?"}
           </Text>
+
           <View style={styles.modalButtons}>
             <TouchableOpacity
               style={[styles.modalButton, styles.deleteButton]}
@@ -160,7 +164,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: "center",
     justifyContent: "center",
-    width:'40%',
+    width: "40%",
   },
   cancelButton: {
     backgroundColor: "gray",
