@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
   EpisodeContainer:{
     flex:1,
     height:100,
-   
   }
 
 })

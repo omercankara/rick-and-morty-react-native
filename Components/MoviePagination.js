@@ -7,16 +7,13 @@ import {
   Image,
   TextInput,
 } from "react-native";
-
-
-
 const image = require("../assets/img.jpg");
+
 import {fetchMovies } from "../Services/Api";
 const MoviePagination = ({ navigation }) => {
   const [episodes, setEpisodes] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
-
 
   //Apiden verileri çekiyorum
   useEffect(() => {
@@ -112,8 +109,6 @@ const MoviePagination = ({ navigation }) => {
 
       {renderEpisodes()}
 
-     
-
       <View style={styles.paginationContainer}>
         {Array.from({ length: totalPages }, (_, index) => index + 1).map(
           (pageNumber) => (
@@ -197,7 +192,6 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "center",
   },
-
   pageButton: {
     paddingHorizontal: 12,
     paddingVertical: 8,

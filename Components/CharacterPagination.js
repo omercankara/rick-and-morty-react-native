@@ -15,8 +15,6 @@ import { addFavorite } from "../store/redux/Favorites";
 import showAlert from "../Alert/Alert";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { fetchCharacterById, fetchCharactersByUrls } from "../Services/Api";
-
-
 const image = require("../assets/movie.jpg");
 
 
@@ -59,9 +57,10 @@ export default function CharacterPagination({ id,navigation }) {
     }
   };
 
-  const handleCharacterPress = (characterId) => {
-    // film detay sayfasına yönlendirme işlemi
-    navigation.navigate("Episode", { id: characterId });
+   // film detay sayfasına yönlendirme işlemi
+  const handleCharacterPress = (movieId) => {
+   
+    navigation.navigate("Episode", { id: movieId });
   };
 
   const handlePageChange = (pageNumber) => {
@@ -70,10 +69,8 @@ export default function CharacterPagination({ id,navigation }) {
   };
 
 
-
  //Arama inputu fonskiyonu
   const searchCharacterByName = () => {
-   
     const query = searchQuery.toLowerCase();
     const filteredCharacters = characterMovieData.filter((characterMovie) =>
       characterMovie.name.toLowerCase().includes(query)

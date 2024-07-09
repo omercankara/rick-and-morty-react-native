@@ -25,11 +25,8 @@ const EpisodePagination = ({ id }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-
         const characterData = await fetchEpisodeById(id);
-
-      
-
+        
         setEpisode(characterData)
         const characters = characterData.characters.map(
           (
@@ -47,7 +44,7 @@ const EpisodePagination = ({ id }) => {
   }, [id]);
 
   const handleCharacterPress = (characterId) => {
-    // Karakter detay sayfasına yönlendirme işlemi burada yapılabilir
+    // Karakter detay sayfasına yönlendirme işlemi
     navigation.navigate("characterDetails", { id: characterId });
   };
 

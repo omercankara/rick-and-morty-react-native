@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 import MoviePagination from "../Components/MoviePagination"; // doğru yolu belirttiğinizden emin olun
-import { NavigationContainer } from "@react-navigation/native";
+
 
 const Home = ({ navigation }) => {
   return (
@@ -16,8 +16,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-start",
     alignItems: "flex-start",
-    
-    
   },
 });
 

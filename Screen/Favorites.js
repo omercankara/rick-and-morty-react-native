@@ -6,13 +6,11 @@ import {
   ScrollView,
   TouchableOpacity,
   Image,
- 
 } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { AntDesign } from "@expo/vector-icons";
 import Modal from "react-native-modal";
 import { removeFavorite } from "../store/redux/Favorites";
-
 
 export default function () {
   const dispatch = useDispatch();
@@ -30,7 +28,7 @@ export default function () {
     console.log("Silme işlemi yapılacak:", selectedItem);
     setModalVisible(false);
     // Silme işlemi tamamlandıktan sonra state'i güncellemeyi unutmayın
-    dispatch(removeFavorite({id:selectedItem.id})); // Burada selectedItem.id'yi removeFavorite action'ına gönderiyoruz
+    dispatch(removeFavorite({ id: selectedItem.id })); // Burada selectedItem.id'yi removeFavorite action'ına gönderiyoruz
     console.log(selectedItem.id);
   };
 
@@ -66,20 +64,20 @@ export default function () {
       <Modal isVisible={modalVisible}>
         <View style={styles.modalContainer}>
           <Text style={styles.modalText}>
-            Silmek istediğinizden emin misiniz?
+            {selectedItem.name } Karakterini Silmek istediğinizden emin misiniz?
           </Text>
           <View style={styles.modalButtons}>
-            <TouchableOpacity
-              style={[styles.modalButton, styles.cancelButton]}
-              onPress={handleDeleteCancel}
-            >
-              <Text style={styles.buttonText}>İptal</Text>
-            </TouchableOpacity>
             <TouchableOpacity
               style={[styles.modalButton, styles.deleteButton]}
               onPress={handleDeleteConfirm}
             >
               <Text style={styles.buttonText}>Sil</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.modalButton, styles.cancelButton]}
+              onPress={handleDeleteCancel}
+            >
+              <Text style={styles.buttonText}>İptal</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -162,6 +160,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: "center",
     justifyContent: "center",
+    width:'40%',
   },
   cancelButton: {
     backgroundColor: "gray",
