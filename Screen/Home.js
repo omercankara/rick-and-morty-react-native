@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import MoviePagination from "../Components/MoviePagination"; // doğru yolu belirttiğinizden emin olun
+import MoviePagination from "../Components/MoviePagination";
 
 
 const Home = ({ navigation }) => {
