@@ -48,7 +48,7 @@ export default function CharacterPagination({ id,navigation }) {
     if (favoritesCharacter.length >= 10) {
       // Eğer favorilerin sayısı 10'dan fazlaysa uyarı göster
       showAlert(
-        "Uyarı", "Favorilere daha fazla karakter ekleyemezsiniz, maksimum 10 karaktere kadar ekleme yapabilirsiniz.");
+        "Uyarı", "Favori karakter ekleme sayısını aştınız. Başka bir karakteri favorilerden çıkarmalısınız");
     } else {
       dispatch(addFavorite(character)); // Favorilere ekleme işlemi
       showAlert(
@@ -59,7 +59,6 @@ export default function CharacterPagination({ id,navigation }) {
 
    // film detay sayfasına yönlendirme işlemi
   const handleCharacterPress = (movieId) => {
-   
     navigation.navigate("Episode", { id: movieId });
   };
 
@@ -219,14 +218,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     alignItems: "center",
     justifyContent: "flex-end",
-   
     position: "relative",
    
-  },
-  favoritesBtn: {
-    
-    left:0,
-  
   },
 
   headerİmage: {
