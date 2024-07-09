@@ -23,12 +23,13 @@ export default function () {
     setModalVisible(true);
   };
 
+  //silme işlemi fonksiyonu
   const handleDeleteConfirm = () => {
-    // Burada silme işlemini gerçekleştirirsiniz, örneğin redux veya başka bir yöntemle
+    
     console.log("Silme işlemi yapılacak:", selectedItem);
     setModalVisible(false);
-    // Silme işlemi tamamlandıktan sonra state'i güncellemeyi unutmayın
-    dispatch(removeFavorite({ id: selectedItem.id })); // Burada selectedItem.id'yi removeFavorite action'ına gönderiyoruz
+   
+    dispatch(removeFavorite({ id: selectedItem.id })); 
     console.log(selectedItem.id);
   };
 
