@@ -259,6 +259,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: "bold",
     color: "#909090",
+    textAlign:"center"
   },
   airDate: {
     fontSize: 16,
